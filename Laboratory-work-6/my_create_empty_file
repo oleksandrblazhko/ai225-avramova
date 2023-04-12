@@ -1,0 +1,16 @@
+#!/bin/bash
+echo "Введіть назву об'єкту: "
+read filename
+if [[ ${#filename} -gt 5 || $filename =~ [0-9]{2,} ]]; then
+  echo "Помилка! Назва об'єкта не відповідає наявним обмеженням."
+  exit 1
+fi
+if [ -e "$filename" ]
+then
+    echo "Помилка! Об'єкт з назвою $filename вже існує."
+    exit 1
+else
+    touch "$filename"
+    echo "Створено порожній файл з назвою $filename."
+    exit 0
+fi
