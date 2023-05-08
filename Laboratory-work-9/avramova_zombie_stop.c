@@ -1,20 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <sys/types.h>
 #include <unistd.h>
 #include <sys/wait.h>
 
-int main() {
-    pid_t pid = fork();
+void sighandler(int sig) {
+	printf("Signal handler for signal = %d\n", sig);
+	wait(0);
+}
 
-    if (pid == 0) {
-        printf("Child of Avramova is finished\n");
-        exit(0);
-    } else {
-        sleep(3);
-        wait(NULL);
-        printf("Parent of Avramova is finished\n");
-    }
+int main(void) {
 
-    return EXIT_SUCCESS;
+	int n = 1;
+	signal(SIGCHLD, &sighandler);
+	pid_t pid = fork();
+    	if (pid == 0) {
+        	fprintf(stdout, "Child of Avramova is finished\n");
+        	_exit(0);
+    	} else {
+		fprintf(stdout, "The parent start...\n");
+        	sleep(3 * n);
+        	fprintf(stdout, "The parent finish...\n");
+    	}
+
+    	return EXIT_SUCCESS;
 }
 
