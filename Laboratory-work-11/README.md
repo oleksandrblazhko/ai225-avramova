@@ -104,7 +104,7 @@
 Команду SELECT ... FROM створити за прикладом з попередньої лабораторної роботи."
 
 ![зображення](https://github.com/oleksandrblazhko/ai225-avramova/assets/99131376/c021577e-f2d0-464c-9ac7-6dd950472942)
-![зображення](https://github.com/oleksandrblazhko/ai225-avramova/assets/99131376/1224d2c0-2630-4354-9502-b95b0b4f9862)
+![зображення](https://github.com/oleksandrblazhko/ai225-avramova/assets/99131376/f5353dd5-b4a7-455e-9131-258f7175252d)
 ![зображення](https://github.com/oleksandrblazhko/ai225-avramova/assets/99131376/25aa9737-517c-4cf1-afbb-a12c7c32cd0c)
 
 Рис. 16 Фрагмент рішення екрану "2.6.2 Оновити раніше створені файли:
