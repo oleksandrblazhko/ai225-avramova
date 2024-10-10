@@ -1,2 +1,2 @@
 ### Діаграма прецедентів програмного продукту
-![sculptorusecase](https://github.com/user-attachments/assets/05f2da60-d862-42d5-a1c1-7b7944204acf)
+![sculptorusecase](https://github.com/user-attachments/assets/7f9ec2c1-5689-4228-b909-92227de4c3eb)
