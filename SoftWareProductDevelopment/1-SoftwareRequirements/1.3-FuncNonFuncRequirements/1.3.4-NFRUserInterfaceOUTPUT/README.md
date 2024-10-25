@@ -1,3 +1,3 @@
 ### Опис вимог до OUTPUT-потоків інтерфейсу користувача
 
-![mockup](https://github.com/user-attachments/assets/acc5e568-8972-4d29-9271-fecb91f7044f)
+![mockup](https://github.com/user-attachments/assets/f04c0d78-05a1-4dcb-9808-68b6f2668ffa)
