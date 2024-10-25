@@ -1,0 +1,64 @@
+@startuml
+
+hide circle
+title Conceptual Classes Diagram for Functional Requirements
+
+Class User {
+    name
+    contactInfo
+}
+
+Class Sculptor {
+}
+
+Class Lighting {
+    intensity
+    status
+    timeOfDay
+}
+
+Class LightingAdjustment {
+    adjustmentType
+    adjustmentTime
+}
+
+Class Tool {
+    name
+    description
+    price
+    availability
+}
+
+Class ToolCatalog {
+    toolList
+}
+
+Class Cart {
+    selectedTools
+}
+
+Class Order {
+    orderDate
+    confirmation
+}
+
+Class Delivery {
+    deliveryTime
+    deliveryTerms
+}
+
+User <|-- Sculptor
+
+Sculptor "1" --> "1" Lighting : requests
+Lighting "1" --> "1" LightingAdjustment : requires
+Sculptor "1" --> "1" ToolCatalog : browses
+Sculptor "1" --> "*" Tool : selects
+Sculptor "1" --> "1" Cart : adds
+Cart "1" --> "*" Tool : contains
+Order "1" --> "1" Cart : includes
+Order "1" --> "1" Delivery : requires
+Sculptor "1" --> "*" Order : places
+
+ToolCatalog "1" --> "*" Tool : contains
+
+@enduml

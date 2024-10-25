@@ -1,0 +1,41 @@
+@startuml
+title UML-діаграма розгортання
+
+left to right direction
+skinparam componentStyle uml1
+
+node "<<Настільний комп'ютер>>" as c1 {
+  node "<<OC Windows, OC Linux, MacOS>>" {
+    node "<<веб-навігатор>>" {
+      component [*js (Vue.js)]
+    }
+  }
+}
+  interface Клавіатура
+  interface Маніпулятор_миша
+
+  Клавіатура -- c1
+  Маніпулятор_миша -- c1
+
+
+
+node "<<сервер 1>>" as s1 {
+  node "<<OC Linux>>" {
+    node "<<node.js>>"  {
+      component [*.js]
+    }
+  }
+}
+
+node "<<сервер 2>>" as s2 {
+  node "<<OC Linuх>>" {
+    node "<<Database Server PostgreSQL>>" {
+      database "Relation Database"
+    }
+  }
+}
+
+c1 -- s1
+s1 -- s2
+
+@enduml
