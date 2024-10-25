@@ -1,0 +1,94 @@
+@startuml
+
+title Relational Schema for Sculptor System
+
+hide circle
+
+entity "User" as user {
+    (PK) user_id
+    --
+    name
+    contactInfo
+}
+
+entity "Sculptor" as sculptor {
+    (PK, FK) user_id
+}
+
+entity "Lighting" as lighting {
+    (PK) lighting_id
+    --
+    intensity
+    status
+    timeOfDay
+}
+
+entity "LightingRequest" as lighting_request {
+    (PK) request_id
+    --
+    requestTime
+    (FK) lighting_id
+    (FK) sculptor_id
+}
+
+entity "LightingAdjustment" as lighting_adjustment {
+    (PK) adjustment_id
+    --
+    adjustmentType
+    adjustmentTime
+    (FK) lighting_id
+    (FK) request_id
+}
+
+entity "Tool" as tool {
+    (PK) tool_id
+    --
+    name
+    description
+    price
+    availability
+}
+
+entity "ToolCatalog" as tool_catalog {
+    (PK) catalog_id
+    --
+    (FK) tool_id
+}
+
+entity "Cart" as cart {
+    (PK) cart_id
+    --
+    (FK) sculptor_id
+}
+
+entity "Order" as order {
+    (PK) order_id
+    --
+    orderDate
+    confirmation
+    (FK) cart_id
+    (FK) sculptor_id
+}
+
+entity "Delivery" as delivery {
+    (PK) delivery_id
+    --
+    deliveryTime
+    deliveryTerms
+    (FK) order_id
+}
+
+' Визначення зв'язків
+user ||--|| sculptor 
+lighting_request }|--|| lighting 
+lighting_request }o--|| sculptor
+lighting_adjustment }|--|| lighting
+lighting_adjustment ||--|{ lighting_request
+tool_catalog ||--{ tool 
+cart ||--{ tool 
+sculptor ||--o{ cart
+order ||--|| cart 
+order }o--|| sculptor 
+delivery ||--|| order 
+
+@enduml
