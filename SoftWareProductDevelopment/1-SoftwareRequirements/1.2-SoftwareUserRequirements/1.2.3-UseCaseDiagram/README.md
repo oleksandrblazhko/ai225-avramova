@@ -1,2 +1,2 @@
 ### Діаграма прецедентів програмного продукту
-![sculptorusecase](https://github.com/user-attachments/assets/7f9ec2c1-5689-4228-b909-92227de4c3eb)
+![](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/oleksandrblazhko/ai225-avramova/refs/heads/laboratory-work-3/SoftWareProductDevelopment/1-SoftwareRequirements/1.2-SoftwareUserRequirements/1.2.3-UseCaseDiagram/UseCase.puml)
