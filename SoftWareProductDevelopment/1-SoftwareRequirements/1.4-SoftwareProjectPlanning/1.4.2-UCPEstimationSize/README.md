@@ -1,3 +1,3 @@
 ### Оцінка трудомісткості процесу розробки програмного продукту
 
-https://docs.google.com/spreadsheets/d/1Lhz-KT5RFg8nQStflSuNGG9lLMRslxYxs4iYo87mD4Y/edit?usp=sharing
+https://docs.google.com/spreadsheets/d/1c7pp7fGGQaJdENfYzOohGU5DE1Q1tWPq9HHdPuuYYs8/edit?usp=sharing
