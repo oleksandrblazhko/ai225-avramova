@@ -1,0 +1,28 @@
+name: Print Software Versions
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  PrintClientAndServerSoftwareVersions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Operating System (Client)
+        run: uname -a
+
+      - name: Install Vue CLI
+        run: npm install -g @vue/cli
+
+      - name: Print Web Framework (Vue.js)
+        run: vue --version
+
+      - name: Print Node.js Version (Server)
+        run: node --version
+
+  PrintDatabaseServerVersion:
+    runs-on: ubuntu-latest
+    needs: [PrintClientAndServerSoftwareVersions]
+    steps:
+      - name: Print PostgreSQL Version
+        run: psql --version
