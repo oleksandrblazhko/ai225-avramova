@@ -1,0 +1,72 @@
+@startuml
+hide circle
+
+class User {
+    -name: String
+    -contactInfo: String
+}
+
+class Sculptor {
+    +requestLightingInfo(): void
+    +viewCatalog(): void
+}
+
+class Lighting {
+    -intensity: Integer
+    -status: String
+    -timeOfDay: Time
+    +getInfo(): void
+    +checkStatus(): void
+    +provideRecommendations(): void
+}
+
+class LightingAdjustment {
+    -adjustmentType: String
+    -adjustmentTime: DateTime
+    +notifyAdjustments(): void
+    +recordAdjustments(): void
+}
+
+class Tool {
+    -name: String
+    -description: String
+    -price: Float
+    -availability: String
+    +provideInstructions(): void
+}
+
+class ToolCatalog {
+    -toolList: List<Tool>
+    +browseTools(): void
+}
+
+class Cart {
+    -selectedTools: List<Tool>
+    +addTool(): void
+}
+
+class Order {
+    -orderDate: DateTime
+    -confirmation: Boolean
+    +confirmOrder(): void
+}
+
+class Delivery {
+    -deliveryTime: DateTime
+    -deliveryTerms: String
+    +processOrder(): void
+}
+
+User <|-- Sculptor
+Sculptor "1" --> "1" Lighting : requests
+Lighting "1" --> "1" LightingAdjustment : requires
+Sculptor "1" --> "1" ToolCatalog : browses
+Sculptor "1" --> "*" Tool : selects
+Sculptor "1" --> "1" Cart : adds
+Cart "1" --> "*" Tool : contains
+Order "1" --> "1" Cart : includes
+Order "1" --> "1" Delivery : requires
+Sculptor "1" --> "*" Order : places
+ToolCatalog "1" --> "*" Tool : contains
+
+@enduml
