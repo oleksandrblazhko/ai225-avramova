@@ -9,12 +9,17 @@ class User {
 class Sculptor {
     +requestLightingInfo(): void
     +viewCatalog(): void
+    -currentLighting: Lighting
+    -selectedTools: List<Tool>
+    -cart: Cart
+    -toolCatalog: ToolCatalog
 }
 
 class Lighting {
     -intensity: Integer
     -status: String
     -timeOfDay: Time
+    -lightingAdjustment: LightingAdjustment
     +getInfo(): void
     +checkStatus(): void
     +provideRecommendations(): void
@@ -48,12 +53,15 @@ class Cart {
 class Order {
     -orderDate: DateTime
     -confirmation: Boolean
+    -cart: Cart
+    -sculptor: Sculptor
     +confirmOrder(): void
 }
 
 class Delivery {
     -deliveryTime: DateTime
     -deliveryTerms: String
+    -order: Order
     +processOrder(): void
 }
 
