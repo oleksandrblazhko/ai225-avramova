@@ -7,6 +7,7 @@ CREATE TYPE user AS (
 -- Створення типу для класу Sculptor
 CREATE TYPE sculptor AS (
     user_id INT,               -- ID користувача
+    selectedTools tool[]       -- Список обраних інструментів
     currentLighting INT,       -- Поточне освітлення
     toolCatalog_id INT,        -- ID каталогу інструментів
     cart_id INT                -- ID кошика
